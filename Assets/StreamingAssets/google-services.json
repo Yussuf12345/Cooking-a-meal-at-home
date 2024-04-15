@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "399689482741",
+    "firebase_url": "https://cooking-a-meal-at-home-default-rtdb.firebaseio.com",
+    "project_id": "cooking-a-meal-at-home",
+    "storage_bucket": "cooking-a-meal-at-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:399689482741:android:695380227a7c739fe6e0bc",
+        "android_client_info": {
+          "package_name": "com.TEMP.cooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwkLEuO1D6IqO6xOBw6y3Qd-1Uy63AAFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
