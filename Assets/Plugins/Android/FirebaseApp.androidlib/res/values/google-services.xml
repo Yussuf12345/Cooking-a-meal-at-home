@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="firebase_database_url" translatable="false">https://cooking-a-meal-at-home-default-rtdb.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">399689482741</string>
+  <string name="google_storage_bucket" translatable="false">cooking-a-meal-at-home.appspot.com</string>
+  <string name="project_id" translatable="false">cooking-a-meal-at-home</string>
+  <string name="google_api_key" translatable="false">AIzaSyBwkLEuO1D6IqO6xOBw6y3Qd-1Uy63AAFA</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBwkLEuO1D6IqO6xOBw6y3Qd-1Uy63AAFA</string>
+  <string name="google_app_id" translatable="false">1:399689482741:android:695380227a7c739fe6e0bc</string>
+</resources>
