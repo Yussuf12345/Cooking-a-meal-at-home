@@ -6,9 +6,9 @@ public class Database : MonoBehaviour
 {
     public List<Recipes> DB = new List<Recipes>();
     public Sprite[] pic;
-    void Start()
+    void Awake()
     {
-        Recipes rp = new Recipes();
+        Recipes rp = ScriptableObject.CreateInstance<Recipes>();
 
         List<string> Ingredients = new List<string>
         {
@@ -30,7 +30,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[0], "Pasta Carbonara", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
-
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients =  new List<string>
         {
             "1. Pizza dough.",
@@ -53,6 +53,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[1], "Classic Margherita Pizza", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "1. Fettuccine pasta.",
@@ -78,6 +79,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[2], "Chicken Alfredo", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "1. All-purpose flour." ,
@@ -108,6 +110,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[3], "Chocolate Chip Cookies", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "1. Beef sirloin" ,
@@ -136,6 +139,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[4], "Beef Stir-Fry", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
            "Lasagna noodles",
@@ -163,6 +167,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[5], "Vegetable Lasagna", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
            "Chicken breast",
@@ -195,6 +200,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[6], "Chicken Tikka Masala", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
            "Romaine lettuce",
@@ -215,6 +221,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[7], "Caesar Salad", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
            "Spaghetti",
@@ -250,6 +257,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[8], "Spaghetti Bolognese", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "All-purpose flour",
@@ -283,6 +291,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[9], "Chocolate Cake", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Chicken breast",
@@ -312,6 +321,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[10], "Chicken Noodle Soup", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
            "Ground beef",
@@ -339,7 +349,8 @@ public class Database : MonoBehaviour
 
         rp.Recipe(pic[11], "Beef Tacos", Ingredients, Instructions, Categories);
         DB.Add(rp);
-        
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Arborio rice",
@@ -373,6 +384,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[12], "Mushroom Risotto", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Romaine lettuce",
@@ -402,6 +414,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[13], "Greek Salad", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Beef sirloin",
@@ -437,6 +450,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[14], "Beef Stroganoff", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Pumpkin puree",
@@ -467,6 +481,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[15], "Pumpkin Soup", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Chicken breast",
@@ -488,6 +503,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[16], "Chicken Parmesan", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "All-purpose flour",
@@ -519,6 +535,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[17], "Banana Bread", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Tomatoes",
@@ -551,6 +568,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[18], "Tomato Basil Soup", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Ground beef",
@@ -575,6 +593,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[19], "Beef Buregers", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Tomatoes",
@@ -598,6 +617,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[20], "Caprese Salad", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
              "All-purpose flour",
@@ -626,6 +646,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[21], "Pancakes", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Eggs",
@@ -659,6 +680,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[22], "Shakshuka", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Shrimp",
@@ -690,6 +712,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[23], "Lemon Garlic Shrimp Pasta", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Romaine lettuce",
@@ -712,6 +735,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[24], "Chicken Caesar Salad", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Eggplant",
@@ -742,6 +766,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[25], "Ratatouille", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Whole chicken",
@@ -768,6 +793,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[26], "Lemon Herb Roast Chicken", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Pizza dough",
@@ -790,6 +816,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[27], "Homemade Pizza", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Potatoes",
@@ -825,6 +852,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[28], "Vegetable Curry", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Chicken breast",
@@ -859,6 +887,7 @@ public class Database : MonoBehaviour
         rp.Recipe(pic[29], "Chicken Enchiladas", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
             "Ladyfingers",
