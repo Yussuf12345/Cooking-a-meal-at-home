@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class filtering : MonoBehaviour
 {
     public Database DB;
     List<Recipes> VegetarianRecipes = new List<Recipes>();
@@ -16,12 +16,6 @@ public class NewBehaviourScript : MonoBehaviour
         isVegetarian();
         isVegan();
         isGlutenFree();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void isVegetarian()
     {

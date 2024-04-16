@@ -12,8 +12,6 @@ using System.IO;
 using Firebase.Database;
 public class settings : MonoBehaviour
 {
-    public AudioMixer sfx;
-    public AudioMixer music;
     public TextMeshProUGUI uid;
 
 

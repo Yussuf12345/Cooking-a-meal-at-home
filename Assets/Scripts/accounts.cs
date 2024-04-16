@@ -11,11 +11,10 @@ using Firebase.Database;
 using UnityEngine.iOS;
 public class accounts : MonoBehaviour
 {
-    public Animator showeverything;
+    public Animation showeverything;
     private string email;
     private string pass;
-    public GameObject preventoverlap;
-
+    public GameObject loadui;
 
 
     public char[] lista;
@@ -23,8 +22,6 @@ public class accounts : MonoBehaviour
     public data local;
     //public settings sett;
     public GameObject banlogin;
-    private int once;
-    public TextMeshProUGUI showserver;
     public TextMeshProUGUI showloading;
     public void Start()
     {
@@ -48,13 +45,13 @@ public class accounts : MonoBehaviour
             else
             {
                 // sett.go();
-                showloading.text = "CREATING DATA...";
+                showloading.text = "CREATING ACCOUNT...";
                 guestquicklogin();
             }
         }
         else
         {
-            showloading.text = "CREATING DATA...";
+            showloading.text = "CREATING ACCOUNT...";
             // sett.go();
             guestquicklogin();
         }
@@ -92,29 +89,25 @@ public class accounts : MonoBehaviour
     }
     public void loginn()
     {
-        once = 1;
         login();
     }
     public void login()
     {
-        showeverything.Rebind();
         if (local.stringo[0] == "" || local.stringo[1] == "")
         {
             showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Email and password cannot be empty";
-            showeverything.Play("check");
+            showeverything.Play();
             local.into[0] = 0;
         }
         else
         {
-            preventoverlap.SetActive(true);
             FirebaseAuth auth = FirebaseAuth.DefaultInstance;
             auth.SignInWithEmailAndPasswordAsync(local.stringo[0].ToString(), local.stringo[1].ToString()).ContinueWithOnMainThread(task =>
             {
 
                 if (task.IsFaulted)
                 {
-                    preventoverlap.SetActive(false);
-                    showeverything.Play("check");
+                    showeverything.Play();
                     showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Error email or password is invalid";
                     local.into[1] = local.into[1] + 1;
                     if (local.into[1] >= 10)
@@ -127,21 +120,16 @@ public class accounts : MonoBehaviour
 
                     local.into[0] = 0;
                     writer();
-                    if (once == 0)
-                    {
-                       // sce.responcez();
-                        once = 1;
-                    }
                     return;
                 }
                 if (task.IsCompleted)
                 {
+                    loadui.SetActive(false);
                     local.into[1] = 0;
                     local.into[0] = 1;
-                    preventoverlap.SetActive(false);
                     local.stringo[2] = auth.CurrentUser.UserId;
                     writer();
-                    showeverything.Play("check");
+                    showeverything.Play();
                     showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Login successful...";
                 }
             });
