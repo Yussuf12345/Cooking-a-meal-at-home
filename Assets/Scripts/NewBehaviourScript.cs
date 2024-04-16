@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public Database DB;
+    List<Recipes> VegetarianRecipes = new List<Recipes>();
+    List<Recipes> VeganRecipes = new List<Recipes>();
+    List<Recipes> GlutenFreeRecipes = new List<Recipes>();
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        isVegetarian();
+        isVegan();
+        isGlutenFree();
     }
 
     // Update is called once per frame
@@ -15,27 +23,37 @@ public class NewBehaviourScript : MonoBehaviour
     {
         
     }
-}
-public class DietaryPreferences : MonoBehaviour
-{
-    // Define variables to store user preferences
-    public bool isVegetarian = false;
-    public bool isGlutenFree = false;
-    public bool isVegan = false;
-    public List<string> excludedIngredients = new List<string>();
-
-    // You can add more dietary preferences here (e.g., vegan, dairy-free, etc.)
-
-    // Method to apply the user's preferences
-    public void ApplyPreferences()
+    public void isVegetarian()
     {
-        // You'll implement this method to filter recipe suggestions based on preferences
-        // For now, let's just print the selected preferences.
-        Debug.Log($"Vegetarian: {isVegetarian}, Gluten-Free: {isGlutenFree},isVegan:{isVegan}");
-        Debug.Log("Excluded Ingredients:");
-        foreach (string ingredient in excludedIngredients)
+        for (int i=0; i < 30; i++)
         {
-            Debug.Log(ingredient);
+            if (DB.DB[i].HasCategory("Vegetarian")) {
+                VegetarianRecipes.Add(DB.DB[i]);
+            }
+            
         }
     }
+    public void isVegan()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            if (DB.DB[i].HasCategory("Vegan"))
+            {
+                VeganRecipes.Add(DB.DB[i]);
+            }
+
+        }
+    }
+    public void isGlutenFree()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            if (DB.DB[i].HasCategory("Gluten-free"))
+            {
+                GlutenFreeRecipes.Add(DB.DB[i]);
+            }
+
+        }
+    }
+
 }
