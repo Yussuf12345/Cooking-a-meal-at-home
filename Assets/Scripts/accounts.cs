@@ -25,13 +25,8 @@ public class accounts : MonoBehaviour
     public TextMeshProUGUI showloading;
     public void Start()
     {
-        if (Application.genuineCheckAvailable)
-        {
-            if (Application.genuine == false)
-            {
-                return;
-            }
-        }
+        loadui.SetActive(true);
+
         local.into[0] = 0;
         Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         if (File.Exists(Application.persistentDataPath + "/local"))

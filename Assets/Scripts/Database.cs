@@ -65,7 +65,7 @@ public class Database : MonoBehaviour
         Instructions = new List<string>
         {
             "1. Cook fettuccine pasta according to package instructions." ,
-            "2. Season chicken breast with salt and pepper, then grill or sauté until fully cooked." ,
+            "2. Season chicken breast with salt and pepper, then grill or sautEuntil fully cooked." ,
             "3. In a saucepan, melt butter over medium heat. " ,
             "4. Add heavy cream and bring to a simmer. " ,
             "5. Stir in grated Parmesan cheese until the sauce is smooth and creamy. " ,
