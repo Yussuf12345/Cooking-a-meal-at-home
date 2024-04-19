@@ -9,4 +9,9 @@ public class minires : MonoBehaviour
     public Image show_Result;
     public TextMeshProUGUI show_Name;
     public TextMeshProUGUI show_Ingredients;
+    public filtering filter;
+    public void open()
+    {
+        filter.extra(show_Name.text);
+    }
 }

@@ -8,7 +8,6 @@ using Firebase;
 using TMPro;
 using System.IO;
 using Firebase.Database;
-using UnityEngine.iOS;
 public class accounts : MonoBehaviour
 {
     public Animation showeverything;
