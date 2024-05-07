@@ -26,7 +26,7 @@ public class Database : MonoBehaviour
             "4. Drain spaghetti and add to the pan with bacon.",
             "5. Quickly pour egg and cheese mixture over hot spaghetti, stirring constantly to coat the pasta and create a creamy sauce."
         };
-        List<string> Categories = new List<string> { "Pasta", "Italian" };
+        List<string> Categories = new List<string> { "Pasta", "Italian", "Beef" };
         rp.Recipe(pic[0], "Pasta Carbonara", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
@@ -74,7 +74,7 @@ public class Database : MonoBehaviour
             "7. Serve the chicken Alfredo over the cooked fettuccine pasta."
             
         };
-        Categories = new List<string> { "Pasta", "Italian" };
+        Categories = new List<string> { "Pasta", "Italian", "Chicken" };
 
         rp.Recipe(pic[2], "Chicken Alfredo", Ingredients, Instructions, Categories);
         DB.Add(rp);
@@ -252,7 +252,7 @@ public class Database : MonoBehaviour
            "9. Cook spaghetti according to package instructions.",
            "10. Serve sauce over cooked spaghetti, sprinkled with grated Parmesan cheese."
         };
-        Categories = new List<string> { "Pasta", "Italian", "Gluten-free" };
+        Categories = new List<string> { "Pasta", "Italian", "Gluten-free", "Beef" };
 
         rp.Recipe(pic[8], "Spaghetti Bolognese", Ingredients, Instructions, Categories);
         DB.Add(rp);
@@ -590,7 +590,7 @@ public class Database : MonoBehaviour
         };
         Categories = new List<string> { "Beef", "Burgers" };
 
-        rp.Recipe(pic[19], "Beef Buregers", Ingredients, Instructions, Categories);
+        rp.Recipe(pic[19], "Beef Burgers", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
         rp = ScriptableObject.CreateInstance<Recipes>();
