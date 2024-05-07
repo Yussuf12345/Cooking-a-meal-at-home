@@ -917,5 +917,718 @@ public class Database : MonoBehaviour
         DB.Add(rp);
 
 
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Bread",
+            "Cheese",
+            "Butter"
+        };
+        Instructions = new List<string>
+        {
+            "1. Butter one side of each slice of bread.",
+            "2. Place cheese between the unbuttered sides of the bread.",
+            "3. Grill sandwich in a pan over medium heat until golden brown and cheese is melted."
+        };
+        Categories = new List<string> { "Sandwich", "Vegetarian" };
+        rp.Recipe(pic[31], "Grilled Cheese Sandwich", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Bread",
+            "Eggs",
+            "Milk",
+            "Cinnamon",
+            "Vanilla extract",
+            "Butter",
+            "Maple syrup"
+        };
+        Instructions = new List<string>
+        {
+            "1. Whisk together eggs, milk, cinnamon, and vanilla extract.",
+            "2. Dip bread slices into the egg mixture.",
+            "3. Melt butter in a pan over medium heat.",
+            "4. Cook bread slices until golden brown on both sides.",
+            "5. Serve with maple syrup."
+        };
+        Categories = new List<string> { "Breakfast", "Vegetarian" };
+        rp.Recipe(pic[32], "French Toast", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Macaroni pasta",
+            "Cheese",
+            "Milk",
+            "Butter",
+            "Flour",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Cook macaroni according to package instructions.",
+            "2. Melt butter in a saucepan over medium heat.",
+            "3. Whisk in flour and cook for 1 minute.",
+            "4. Gradually whisk in milk until smooth.",
+            "5. Add cheese and stir until melted.",
+            "6. Season with salt and pepper.",
+            "7. Drain macaroni and add to cheese sauce.",
+            "8. Stir to combine and serve hot."
+        };
+        Categories = new List<string> { "Pasta", "Vegetarian" };
+        rp.Recipe(pic[33], "Mac and Cheese", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "All-purpose flour",
+            "Baking powder",
+            "Salt",
+            "Sugar",
+            "Milk",
+            "Eggs",
+            "Butter",
+            "Vanilla extract",
+            "Blueberries",
+            "Maple syrup"
+        };
+        Instructions = new List<string>
+        {
+            "1. In a large bowl, whisk together flour, baking powder, salt, and sugar.",
+            "2. In another bowl, whisk together milk, eggs, melted butter, and vanilla extract.",
+            "3. Pour wet ingredients into dry ingredients and stir until just combined.",
+            "4. Heat a griddle or large skillet over medium heat.",
+            "5. Grease with butter.",
+            "6. Pour 1/4 cup of batter onto the griddle for each pancake.",
+            "7. Cook until bubbles form on the surface, then flip and cook until golden brown.",
+            "8. Serve with maple syrup."
+        };
+        Categories = new List<string> { "Breakfast", "Pancakes", "Vegetarian" };
+        rp.Recipe(pic[34], "Bluberry Pancakes", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Eggs",
+            "Milk",
+            "Salt",
+            "Pepper",
+            "Butter",
+            "Fillings of your choice (cheese, vegetables, meat)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Whisk together eggs, milk, salt, and pepper.",
+            "2. Melt butter in a pan over medium heat.",
+            "3. Pour egg mixture into the pan.",
+            "4. As the eggs cook, gently push the cooked edges toward the center of the pan.",
+            "5. Add your desired fillings to one half of the omelette.",
+            "6. Fold the other half of the omelette over the fillings.",
+            "7. Cook for a few more minutes, until the fillings are heated through.",
+            "8. Serve hot."
+        };
+        Categories = new List<string> { "Breakfast", "Vegetarian" };
+        rp.Recipe(pic[35], "Omelette", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Romaine lettuce",
+            "Caesar dressing",
+            "Croutons",
+            "Shrimp",
+            "Parmesan cheese"
+        };
+        Instructions = new List<string>
+        {
+            "1. Wash and chop romaine lettuce into bite-sized pieces.",
+            "2. In a large bowl, toss lettuce with Caesar dressing.",
+            "3. Add croutons and grated Parmesan cheese.",
+            "4. Toss to combine.",
+            "5. Serve immediately."
+        };
+        Categories = new List<string> { "Salad", "Seafood" };
+        rp.Recipe(pic[36], "Shrimp Caesar Salad", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Avocados",
+            "Lime juice",
+            "Onion",
+            "Cilantro",
+            "Jalapeno pepper (optional)",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Mash avocados in a bowl.",
+            "2. Add lime juice, chopped onion, chopped cilantro, and chopped jalapeno pepper (if using).",
+            "3. Season with salt and pepper.",
+            "4. Stir to combine and serve with chips or vegetables."
+        };
+        Categories = new List<string> { "Dip", "Mexican", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[37], "Guacamole", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Tuna",
+            "Mayonnaise",
+            "Celery",
+            "Onion",
+            "Lemon juice",
+            "Salt",
+            "Pepper",
+            "Bread"
+        };
+        Instructions = new List<string>
+        {
+            "1. Flake tuna into a bowl.",
+            "2. Add mayonnaise, chopped celery, chopped onion, and lemon juice.",
+            "3. Season with salt and pepper.",
+            "4. Stir to combine and serve on bread."
+        };
+        Categories = new List<string> { "Sandwich", "Fish" };
+        rp.Recipe(pic[38], "Tuna Salad", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Chicken",
+            "Mayonnaise",
+            "Celery",
+            "Onion",
+            "Grapes",
+            "Salt",
+            "Pepper",
+            "Bread"
+        };
+        Instructions = new List<string>
+        {
+            "1. Shred or chop chicken into a bowl.",
+            "2. Add mayonnaise, chopped celery, chopped onion, and halved grapes.",
+            "3. Season with salt and pepper.",
+            "4. Stir to combine and serve on bread."
+        };
+        Categories = new List<string> { "Sandwich", "Chicken" };
+        rp.Recipe(pic[39], "Chicken Salad", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Fruits of your choice (strawberries, blueberries, raspberries, grapes, oranges, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Wash and chop fruits.",
+            "2. Combine fruits in a bowl.",
+            "3. Serve chilled."
+        };
+        Categories = new List<string> { "Salad", "Fruit", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[40], "Fruit Salad", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Greek yogurt",
+            "Berries (strawberries, blueberries, raspberries, etc.)",
+            "Honey"
+        };
+        Instructions = new List<string>
+        {
+            "1. Spoon Greek yogurt into a bowl.",
+            "2. Top with berries and a drizzle of honey.",
+            "3. Serve immediately."
+        };
+        Categories = new List<string> { "Breakfast", "Snack", "Vegetarian" };
+        rp.Recipe(pic[41], "Greek Yogurt with Berries and Honey", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Oats",
+            "Milk",
+            "Fruit (banana, berries, apple, etc.)",
+            "Nuts (almonds, walnuts, pecans, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Cook oats according to package instructions.",
+            "2. Top with your favorite fruit and nuts.",
+            "3. Serve hot."
+        };
+        Categories = new List<string> { "Breakfast", "Vegetarian" };
+        rp.Recipe(pic[42], "Oatmeal with Fruit and Nuts", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Fruit (banana, berries, mango, etc.)",
+            "Liquid (milk, yogurt, juice)",
+            "Ice"
+        };
+        Instructions = new List<string>
+        {
+            "1. Combine all ingredients in a blender.",
+            "2. Blend until smooth.",
+            "3. Serve immediately."
+        };
+        Categories = new List<string> { "Drink", "Fruit", "Vegan" };
+        rp.Recipe(pic[43], "Smoothie", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Nuts (almonds, walnuts, pecans, etc.)",
+            "Dried fruit (raisins, cranberries, apricots, etc.)",
+            "Seeds (sunflower seeds, pumpkin seeds)",
+            "Chocolate chips (optional)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Combine all ingredients in a bowl.",
+            "2. Mix well.",
+            "3. Store in an airtight container."
+        };
+        Categories = new List<string> { "Snack", "Vegan" };
+        rp.Recipe(pic[44], "Trail Mix", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Popcorn kernels",
+            "Oil",
+            "Salt"
+        };
+                Instructions = new List<string>
+        {
+            "1. Heat oil in a large pot over medium heat.",
+            "2. Add popcorn kernels and cover the pot.",
+            "3. Cook, shaking the pot occasionally, until the popping slows down.",
+            "4. Remove from heat and season with salt.",
+            "5. Serve immediately."
+        };
+        Categories = new List<string> { "Snack", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[45], "Popcorn", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Potatoes",
+            "Olive oil",
+            "Salt",
+            "Pepper",
+            "Toppings of your choice (butter, sour cream, cheese, chives, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 400°F (200°C).",
+            "2. Scrub potatoes clean.",
+            "3. Rub potatoes with olive oil, salt, and pepper.",
+            "4. Pierce potatoes with a fork.",
+            "5. Bake in the preheated oven for 1 hour, or until tender.",
+            "6. Serve with your favorite toppings."
+        };
+        Categories = new List<string> { "Side Dish", "Potato", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[46], "Baked Potato", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Vegetables of your choice (broccoli, carrots, cauliflower, Brussels sprouts, etc.)",
+            "Olive oil",
+            "Salt",
+            "Pepper",
+            "Herbs of your choice (rosemary, thyme, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 400°F (200°C).",
+            "2. Chop vegetables into bite-sized pieces.",
+            "3. Toss vegetables with olive oil, salt, pepper, and herbs.",
+            "4. Spread vegetables on a baking sheet.",
+            "5. Roast in the preheated oven for 20-30 minutes, or until tender and slightly browned.",
+            "6. Serve hot."
+        };
+        Categories = new List<string> { "Side Dish", "Vegetable", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[47], "Roasted Vegetables", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Rice",
+            "Water"
+        };
+        Instructions = new List<string>
+        {
+            "1. Rinse rice in a fine-mesh sieve.",
+            "2. In a saucepan, combine rice and water.",
+            "3. Bring to a boil, then reduce heat and simmer for 15-20 minutes, or until water is absorbed and rice is tender.",
+            "4. Fluff with a fork and serve hot."
+        };
+        Categories = new List<string> { "Side Dish", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[48], "Rice", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Quinoa",
+            "Water"
+        };
+        Instructions = new List<string>
+        {
+            "1. Rinse quinoa in a fine-mesh sieve.",
+            "2. In a saucepan, combine quinoa and water.",
+            "3. Bring to a boil, then reduce heat and simmer for 15 minutes, or until water is absorbed and quinoa is tender.",
+            "4. Fluff with a fork and serve hot."
+        };
+        Categories = new List<string> { "Side Dish", "Vegan", "Gluten-free" };
+        rp.Recipe(pic[49], "Quinoa", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Potatoes",
+            "Milk",
+            "Butter",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Peel and chop potatoes into even-sized pieces.",
+            "2. Boil potatoes in a pot of water until tender.",
+            "3. Drain potatoes and return to the pot.",
+            "4. Add milk, butter, salt, and pepper.",
+            "5. Mash potatoes until smooth.",
+            "6. Serve hot."
+        };
+        Categories = new List<string> { "Side Dish", "Potato", "Vegan" };
+        rp.Recipe(pic[50], "Mashed Potatoes", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Potatoes",
+            "Oil",
+            "Salt"
+        };
+        Instructions = new List<string>
+        {
+            "1. Peel and cut potatoes into fries.",
+            "2. Soak fries in cold water for 30 minutes.",
+            "3. Dry fries thoroughly.",
+            "4. Heat oil in a deep fryer or large pot to 375°F (190°C).",
+            "5. Fry fries in batches until golden brown and crispy.",
+            "6. Drain on paper towels and season with salt.",
+            "7. Serve hot."
+        };
+        Categories = new List<string> { "Side Dish", "Potato", "Vegan" };
+        rp.Recipe(pic[51], "French Fries", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Lettuce",
+            "Vegetables of your choice (tomatoes, cucumbers, carrots, etc.)",
+            "Olive oil",
+            "Vinegar",
+            "Dijon mustard",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Wash and chop lettuce and vegetables.",
+            "2. In a small bowl, whisk together olive oil, vinegar, Dijon mustard, salt, and pepper.",
+            "3. Pour dressing over salad and toss to combine.",
+            "4. Serve immediately."
+        };
+        Categories = new List<string> { "Salad", "Vegan" };
+        rp.Recipe(pic[52], "Salad with Vinaigrette", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Vegetables of your choice (onion, carrots, celery, etc.)",
+            "Vegtable broth",
+            "Herbs and spices of your choice"
+        };
+        Instructions = new List<string>
+        {
+            "1. Chop vegetables.",
+            "2. In a large pot, sauté vegetables in oil until softened.",
+            "3. Add broth and herbs and spices.",
+            "4. Bring to a boil, then reduce heat and simmer for 20-30 minutes, or until vegetables are tender.",
+            "5. Serve hot."
+        };
+        Categories = new List<string> { "Soup", "Vegan" };
+        rp.Recipe(pic[53], "Soup", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Ground beef",
+            "Onion",
+            "Garlic",
+            "Chili powder",
+            "Cumin",
+            "Oregano",
+            "Tomatoes",
+            "Kidney beans",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. In a large pot, brown ground beef or turkey over medium heat.",
+            "2. Add chopped onion and minced garlic, and cook until softened.",
+            "3. Stir in chili powder, cumin, oregano, salt, and pepper.",
+            "4. Add tomatoes, kidney beans, and water.",
+            "5. Bring to a boil, then reduce heat and simmer for at least 30 minutes, or up to several hours.",
+            "6. Serve hot."
+        };
+        Categories = new List<string> { "Soup", "Chili", "Beef" }; 
+        rp.Recipe(pic[54], "Chili", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Tortillas",
+            "Chicken",
+            "Toppings of your choice (lettuce, tomato, cheese, onion, cilantro, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Cook your chosen protein.",
+            "2. Warm tortillas.",
+            "3. Fill tortillas with protein and your favorite toppings.",
+            "4. Serve immediately."
+        };
+        Categories = new List<string> { "Mexican", "Tacos", "Chicken" };
+        rp.Recipe(pic[55], "Chicken Tacos", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+       
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Large tortillas",
+            "Rice",
+            "Beans",
+            "Protein of your choice (ground beef, chicken, fish, etc.)",
+            "Toppings of your choice (lettuce, tomato, cheese, onion, cilantro, etc.)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Cook rice and beans.",
+            "2. Cook your chosen protein.",
+            "3. Warm tortillas.",
+            "4. Fill tortillas with rice, beans, protein, and your favorite toppings.",
+            "5. Fold burritos and serve immediately."
+        };
+        Categories = new List<string> { "Mexican", "Burritos" };
+        rp.Recipe(pic[56], "Burritos", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Pizza dough",
+            "Tomato sauce",
+            "Cheese",
+            "Chicken",
+            "Toppings of your choice"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 450°F (230°C).",
+            "2. Roll out pizza dough.",
+            "3. Spread tomato sauce over the dough.",
+            "4. Sprinkle with cheese and add your favorite toppings.",
+            "5. Bake in preheated oven for 10-15 minutes, or until crust is golden brown and cheese is melted and bubbly.",
+            "6. Serve hot."
+        };
+        Categories = new List<string> { "Pizza", "Italian", "Chicken" };
+        rp.Recipe(pic[57], "Chicken Pizza", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Pasta",
+            "Tomato sauce",
+            "Olive oil",
+            "Garlic",
+            "Salt",
+            "Pepper",
+            "Parmesan cheese"
+        };
+        Instructions = new List<string>
+        {
+            "1. Cook pasta according to package instructions.",
+            "2. In a saucepan, heat olive oil over medium heat.",
+            "3. Add minced garlic and cook until fragrant.",
+            "4. Stir in tomato sauce, salt, and pepper.",
+            "5. Simmer for 10 minutes.",
+            "6. Drain pasta and add to sauce.",
+            "7. Stir to combine and serve hot, sprinkled with Parmesan cheese."
+        };
+        Categories = new List<string> { "Pasta", "Italian", "Vegetarian" };
+        rp.Recipe(pic[58], "Pasta with Tomato Sauce", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Beef",
+            "Vegetables of your choice (potatoes, carrots, peas, etc.)",
+            "Curry paste or powder",
+            "Coconut milk",
+            "Rice"
+        };
+        Instructions = new List<string>
+        {
+            "1. Chop protein and vegetables into bite-sized pieces.",
+            "2. In a large pot, sauté protein and vegetables in oil until softened.",
+            "3. Stir in curry paste or powder and cook for 1 minute.",
+            "4. Add coconut milk and water.",
+            "5. Bring to a boil, then reduce heat and simmer for 20-30 minutes, or until protein and vegetables are cooked through.",
+            "6. Serve over rice."
+        };
+        Categories = new List<string> { "Curry", "Indian", "Beef" };
+        rp.Recipe(pic[60], "Beef Curry", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Salmon fillets",
+            "Lemon",
+            "Fresh dill",
+            "Olive oil",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 400°F (200°C).",
+            "2. Place salmon fillets on a baking sheet lined with parchment paper.",
+            "3. Drizzle with olive oil and season with salt and pepper.",
+            "4. Squeeze fresh lemon juice over the salmon.",
+            "5. Sprinkle with chopped fresh dill.",
+            "6. Bake for 12-15 minutes, or until salmon is cooked through.",
+            "7. Serve hot with your favorite sides."
+        };
+        Categories = new List<string> { "Fish" };
+        rp.Recipe(pic[61], "Salmon with Lemon and Dill", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "White fish fillets (such as tilapia or cod)",
+            "Taco seasoning",
+            "Corn tortillas",
+            "Mango",
+            "Red onion",
+            "Cilantro",
+            "Lime juice",
+            "Salt",
+            "Pepper",
+            "Avocado (optional)"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 400°F (200°C).",
+            "2. Season fish fillets with taco seasoning.",
+            "3. Bake for 10-12 minutes, or until fish is cooked through.",
+            "4. While fish is baking, prepare the mango salsa by combining diced mango, red onion, cilantro, lime juice, salt, and pepper.",
+            "5. Warm tortillas.",
+            "6. Flake cooked fish and serve in tortillas with mango salsa and optional avocado slices.",
+        };
+        Categories = new List<string> { "Fish", "Mexican" };
+        rp.Recipe(pic[62], "Fish Tacos with Mango Salsa", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
+        rp = ScriptableObject.CreateInstance<Recipes>();
+        Ingredients = new List<string>
+        {
+            "Cod fillets",
+            "Parmesan cheese",
+            "Bread crumbs",
+            "Olive oil",
+            "Lemon juice",
+            "Garlic powder",
+            "Salt",
+            "Pepper"
+        };
+        Instructions = new List<string>
+        {
+            "1. Preheat oven to 400°F (200°C).",
+            "2. In a bowl, combine Parmesan cheese, bread crumbs, olive oil, lemon juice, garlic powder, salt, and pepper.",
+            "3. Place cod fillets on a baking sheet.",
+            "4. Press Parmesan mixture onto the top of each fillet.",
+            "5. Bake in preheated oven for 15-20 minutes, or until fish is cooked through and flakes easily with a fork."
+        };
+        Categories = new List<string> { "Fish" };
+        rp.Recipe(pic[63], "Baked Cod with Parmesan Crust", Ingredients, Instructions, Categories);
+        DB.Add(rp);
+
     }
 }
