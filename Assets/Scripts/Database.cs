@@ -8,15 +8,15 @@ public class Database : MonoBehaviour
     public Sprite[] pic;
     void Awake()
     {
-        Recipes rp = new Recipes();
+        Recipes rp = ScriptableObject.CreateInstance<Recipes>();
 
         List<string> Ingredients = new List<string>
         {
-            "1. Spaghetti.",
-            "2. Eggs",
-            "3. Bacon.",
-            "4. Parmesan",
-            "5. Cheese",
+            "Spaghetti.",
+            "Eggs",
+            "Bacon.",
+            "Parmesan",
+            "Cheese",
         };
         List<string> Instructions = new List<string>
         {
@@ -33,10 +33,10 @@ public class Database : MonoBehaviour
         rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients =  new List<string>
         {
-            "1. Pizza dough.",
-            "2. Tomato sauce",
-            "3. Fresh mozzarella cheese.",
-            "4. Basil leaves."
+            "Pizza dough.",
+            "Tomato sauce",
+            "Fresh mozzarella cheese.",
+            "Basil leaves."
         };
         Instructions = new List<string>
         {
@@ -56,11 +56,11 @@ public class Database : MonoBehaviour
         rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
-            "1. Fettuccine pasta.",
-            "2. Chicken breast.",
-            "3. Heavy cream",
-            "4. Parmesan cheese",
-            "5. Butter."
+            "Fettuccine pasta.",
+            "Chicken breast.",
+            "Heavy cream",
+            "Parmesan cheese",
+            "Butter."
             
         };
         Instructions = new List<string>
@@ -82,15 +82,15 @@ public class Database : MonoBehaviour
         rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
-            "1. All-purpose flour." ,
-            "2. Baking soda." ,
-            "3. Salt." ,
-            "4. Unsalted butter." ,
-            "5. Brown sugar." ,
-            "6. Granulated sugar" ,
-            "7. Eggs. " ,
-            "8. Vanilla extract. ",
-            "9. Chocolate chips."
+            "All-purpose flour." ,
+            "Baking soda." ,
+            "Salt." ,
+            "Unsalted butter." ,
+            "Brown sugar." ,
+            "Granulated sugar" ,
+            "Eggs. " ,
+            "Vanilla extract. ",
+            "Chocolate chips."
             
         };
         Instructions = new List<string>
@@ -113,14 +113,14 @@ public class Database : MonoBehaviour
         rp = ScriptableObject.CreateInstance<Recipes>();
         Ingredients = new List<string>
         {
-            "1. Beef sirloin" ,
-            "2. Soy sauce" ,
-            "3. Garlic" ,
-            "4. Ginger" ,
-            "5. Vegetable oil" ,
-            "6. Broccoli" ,
-            "7. Bell peppers" ,
-            "8. Onion."
+            "Beef sirloin" ,
+            "Soy sauce" ,
+            "Garlic" ,
+            "Ginger" ,
+            "Vegetable oil" ,
+            "Broccoli" ,
+            "Bell peppers" ,
+            "Onion."
            
         };
         Instructions = new List<string>

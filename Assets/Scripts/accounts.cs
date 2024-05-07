@@ -22,6 +22,7 @@ public class accounts : MonoBehaviour
     //public settings sett;
     public GameObject banlogin;
     public TextMeshProUGUI showloading;
+    public Animation stani;
     public void Start()
     {
         loadui.SetActive(true);
@@ -118,6 +119,7 @@ public class accounts : MonoBehaviour
                 }
                 if (task.IsCompleted)
                 {
+                    stani.Play();
                     loadui.SetActive(false);
                     local.into[1] = 0;
                     local.into[0] = 1;

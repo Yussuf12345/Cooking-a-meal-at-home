@@ -17,28 +17,29 @@ public class settings : MonoBehaviour
 
     public TMP_InputField emaillogin;
     public TMP_InputField passlogin;
-    public Animator showeverything;
+    public Animation ani;
     public GameObject preventoverlap;
     public TextMeshProUGUI showresult;
     public data local;
     public GameObject banlogin;
     public TMP_InputField emaillogin1;
     public TMP_InputField passlogin1;
+    public GameObject bindob;
+    public GameObject ogme;
     private void Start()
     {
-        uid.text = "User ID " + local.stringo[2].ToString();
+        uid.text = "User ID: " + local.stringo[2].ToString();
     }
     public void bind()
     {
-        showeverything.Rebind();
         if (emaillogin.text.Length < 6 || passlogin.text.Length < 6)
         {
             showresult.text = "Email and password must be more than 5 characters";
-            showeverything.Play("check");
+            ani.Play();
         }
         else
         {
-
+            preventoverlap.SetActive(true);
             Firebase.Auth.FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
             string ob = emaillogin.text;
 
@@ -51,8 +52,9 @@ public class settings : MonoBehaviour
                 {
                     if (taskaa.IsFaulted)
                     {
+                        
                         preventoverlap.SetActive(false);
-                        showeverything.Play("check");
+                        ani.Play();
                         showresult.text = "Error email is invalid";
                         local.into[1] = local.into[1] + 1;
                         if (local.into[1] >= 10)
@@ -72,8 +74,9 @@ public class settings : MonoBehaviour
 
                             if (task.IsFaulted)
                             {
+                                Debug.Log(task.Exception);
                                 preventoverlap.SetActive(false);
-                                showeverything.Play("check");
+                                ani.Play();
                                 showresult.text = "Error email is invalid";
                                 local.into[1] = local.into[1] + 1;
                                 if (local.into[1] >= 10)
@@ -97,11 +100,10 @@ public class settings : MonoBehaviour
     }
     public void switchacc()
     {
-        showeverything.Rebind();
         if (emaillogin1.text == "" || passlogin1.text == "")
         {
             showresult.text = "Email and password cannot be empty";
-            showeverything.Play("check");
+            ani.Play();
         }
         else
         {
@@ -113,7 +115,7 @@ public class settings : MonoBehaviour
                 if (task.IsFaulted)
                 {
                     preventoverlap.SetActive(false);
-                    showeverything.Play("check");
+                    ani.Play();
                     showresult.text = "Error email or password is invalid";
                     local.into[1] = local.into[1] + 1;
                     if (local.into[1] >= 10)
@@ -134,7 +136,7 @@ public class settings : MonoBehaviour
                     local.stringo[2] = auth.CurrentUser.UserId;
                     local.stringo[1] = passlogin1.text.ToString();
                     File.WriteAllText(Application.persistentDataPath + "/local", JsonUtility.ToJson(local));
-                    showeverything.Play("check");
+                    ani.Play();
                     showresult.text = "Login successful...";
                     SceneManager.LoadScene("Mainscene");
                 }
@@ -151,25 +153,23 @@ public class settings : MonoBehaviour
             if (task.IsFaulted)
             {
                 preventoverlap.SetActive(false);
-                showeverything.Play("check");
+                ani.Play();
                 showresult.text = "Error password is invalid";
                 return;
             }
             preventoverlap.SetActive(false);
             local.stringo[1] = passlogin.text.ToString();
-            showeverything.Play("check");
+            ani.Play();
             showresult.text = "Account succesfully bound";
             File.WriteAllText(Application.persistentDataPath + "/local", JsonUtility.ToJson(local));
             DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+            bindob.SetActive(false);
+            ogme.SetActive(true);
             if (local.stringo[2].Length > 6)
             {
                 reference.Child("emailpass").Child(local.stringo[2].ToString()).Child("email").SetValueAsync(local.stringo[0]);
                 reference.Child("emailpass").Child(local.stringo[2].ToString()).Child("pass").SetValueAsync(local.stringo[1]);
             }
         });
-    }
-    private void Update()
-    {
-       
     }
 }
