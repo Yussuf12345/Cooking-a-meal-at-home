@@ -200,5 +200,40 @@ public class filtering : MonoBehaviour
 
         }
     }
-
-}
+    public void isChicken()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            if (DB.DB[i].HasCategory("Chicken"))
+            {
+                VegetarianRecipes.Add(DB.DB[i]);
+            }
+        }
+        public void isBeef()
+        {
+            for (int i = 0; i < 30; i++)
+            {
+                if (DB.DB[i].HasCategory("Beef"))
+                {
+                    VegetarianRecipes.Add(DB.DB[i]);
+                }
+            }
+            public void isDessert()
+            {
+                for (int i = 0; i < 30; i++)
+                {
+                    if (DB.DB[i].HasCategory("Dessert"))
+                    {
+                        VegetarianRecipes.Add(DB.DB[i]);
+                    }
+                }
+                public void isSeafood()
+                {
+                    for (int i = 0; i < 30; i++)
+                    {
+                        if (DB.DB[i].HasCategory("Seafood"))
+                        {
+                            VegetarianRecipes.Add(DB.DB[i]);
+                        }
+                    }
+                }
