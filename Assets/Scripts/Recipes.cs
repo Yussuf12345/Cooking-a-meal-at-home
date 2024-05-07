@@ -26,8 +26,11 @@ public class Recipes : ScriptableObject
     {
         return categories.Contains(category);
     }
+    public bool HasIngredient(string ingredient)
+    {
+        return ingredients.Contains(ingredient);
+    }
 
-   
 }
 
 

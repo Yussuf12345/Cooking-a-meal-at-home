@@ -11,6 +11,11 @@ public class filtering : MonoBehaviour
     List<Recipes> VegetarianRecipes = new List<Recipes>();
     List<Recipes> VeganRecipes = new List<Recipes>();
     List<Recipes> GlutenFreeRecipes = new List<Recipes>();
+    List<Recipes> ChickenRecipes = new List<Recipes>();
+    List<Recipes> BeefRecipes = new List<Recipes>();
+    List<Recipes> DessertRecipes = new List<Recipes>();
+    List<Recipes> SeafoodRecipes = new List<Recipes>();
+
     public minires prefab;
     public GameObject parent;
 
@@ -27,7 +32,7 @@ public class filtering : MonoBehaviour
 
     public void display_Vegetarian()
     {
-        for(int x=0;x< VegetarianRecipes.Count; x++)
+        for (int x = 0; x < VegetarianRecipes.Count; x++)
         {
             minires temp = GameObject.Instantiate(prefab);
             temp.show_Name.text = VegetarianRecipes[x].r_name;
@@ -98,9 +103,9 @@ public class filtering : MonoBehaviour
     public void extra(string s_name)
     {
         int temp = 0;
-        for(int x=0;x<DB.DB.Count;x++)
+        for (int x = 0; x < DB.DB.Count; x++)
         {
-            if (DB.DB[x].r_name== s_name)
+            if (DB.DB[x].r_name == s_name)
             {
                 temp = x;
                 break;
@@ -117,7 +122,7 @@ public class filtering : MonoBehaviour
                 single_ingredients.text = single_ingredients.text + ", ";
             }
         }
-       
+
 
         single_category.text = "Categories: ";
         for (int z = 0; z < DB.DB[temp].categories.Count; z++)
@@ -139,7 +144,7 @@ public class filtering : MonoBehaviour
                 single_instructions.text = single_instructions.text + "<br>";
             }
         }
-      
+
         results_menu.SetActive(false);
         extra_menu.SetActive(true);
 
@@ -168,14 +173,19 @@ public class filtering : MonoBehaviour
         isVegetarian();
         isVegan();
         isGlutenFree();
+        isChicken();
+        isBeef();
+        isSeafood();
+        isDessert();
     }
     public void isVegetarian()
     {
-        for (int i=0; i < 30; i++)
+        for (int i = 0; i < 30; i++)
         {
-            if (DB.DB[i].HasCategory("Vegetarian")) {
+            if (DB.DB[i].HasCategory("Vegetarian"))
+            {
                 VegetarianRecipes.Add(DB.DB[i]);
-            }           
+            }
         }
     }
     public void isVegan()
@@ -206,34 +216,38 @@ public class filtering : MonoBehaviour
         {
             if (DB.DB[i].HasCategory("Chicken"))
             {
-                VegetarianRecipes.Add(DB.DB[i]);
+                ChickenRecipes.Add(DB.DB[i]);
             }
         }
-        public void isBeef()
+    }
+    public void isBeef()
+    {
+        for (int i = 0; i < 30; i++)
         {
-            for (int i = 0; i < 30; i++)
+            if (DB.DB[i].HasCategory("Beef"))
             {
-                if (DB.DB[i].HasCategory("Beef"))
-                {
-                    VegetarianRecipes.Add(DB.DB[i]);
-                }
+                BeefRecipes.Add(DB.DB[i]);
             }
-            public void isDessert()
+        }
+    }
+    public void isDessert()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            if (DB.DB[i].HasCategory("Dessert"))
             {
-                for (int i = 0; i < 30; i++)
-                {
-                    if (DB.DB[i].HasCategory("Dessert"))
-                    {
-                        VegetarianRecipes.Add(DB.DB[i]);
-                    }
-                }
-                public void isSeafood()
-                {
-                    for (int i = 0; i < 30; i++)
-                    {
-                        if (DB.DB[i].HasCategory("Seafood"))
-                        {
-                            VegetarianRecipes.Add(DB.DB[i]);
-                        }
-                    }
-                }
+                DessertRecipes.Add(DB.DB[i]);
+            }
+        }
+    }
+    public void isSeafood()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            if (DB.DB[i].HasCategory("Seafood"))
+            {
+                SeafoodRecipes.Add(DB.DB[i]);
+            }
+        }
+    }
+}

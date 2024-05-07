@@ -1405,7 +1405,7 @@ public class Database : MonoBehaviour
         Instructions = new List<string>
         {
             "1. Chop vegetables.",
-            "2. In a large pot, sauté vegetables in oil until softened.",
+            "2. In a large pot, sautEvegetables in oil until softened.",
             "3. Add broth and herbs and spices.",
             "4. Bring to a boil, then reduce heat and simmer for 20-30 minutes, or until vegetables are tender.",
             "5. Serve hot."
@@ -1545,7 +1545,7 @@ public class Database : MonoBehaviour
         Instructions = new List<string>
         {
             "1. Chop protein and vegetables into bite-sized pieces.",
-            "2. In a large pot, sauté protein and vegetables in oil until softened.",
+            "2. In a large pot, sautEprotein and vegetables in oil until softened.",
             "3. Stir in curry paste or powder and cook for 1 minute.",
             "4. Add coconut milk and water.",
             "5. Bring to a boil, then reduce heat and simmer for 20-30 minutes, or until protein and vegetables are cooked through.",
