@@ -1552,7 +1552,7 @@ public class Database : MonoBehaviour
             "6. Serve over rice."
         };
         Categories = new List<string> { "Curry", "Indian", "Beef" };
-        rp.Recipe(pic[60], "Beef Curry", Ingredients, Instructions, Categories);
+        rp.Recipe(pic[59], "Beef Curry", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
         rp = ScriptableObject.CreateInstance<Recipes>();
@@ -1576,7 +1576,7 @@ public class Database : MonoBehaviour
             "7. Serve hot with your favorite sides."
         };
         Categories = new List<string> { "Fish" };
-        rp.Recipe(pic[61], "Salmon with Lemon and Dill", Ingredients, Instructions, Categories);
+        rp.Recipe(pic[60], "Salmon with Lemon and Dill", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
         rp = ScriptableObject.CreateInstance<Recipes>();
@@ -1603,7 +1603,7 @@ public class Database : MonoBehaviour
             "6. Flake cooked fish and serve in tortillas with mango salsa and optional avocado slices.",
         };
         Categories = new List<string> { "Fish", "Mexican" };
-        rp.Recipe(pic[62], "Fish Tacos with Mango Salsa", Ingredients, Instructions, Categories);
+        rp.Recipe(pic[61], "Fish Tacos with Mango Salsa", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
         rp = ScriptableObject.CreateInstance<Recipes>();
@@ -1627,7 +1627,7 @@ public class Database : MonoBehaviour
             "5. Bake in preheated oven for 15-20 minutes, or until fish is cooked through and flakes easily with a fork."
         };
         Categories = new List<string> { "Fish" };
-        rp.Recipe(pic[63], "Baked Cod with Parmesan Crust", Ingredients, Instructions, Categories);
+        rp.Recipe(pic[62], "Baked Cod with Parmesan Crust", Ingredients, Instructions, Categories);
         DB.Add(rp);
 
     }
