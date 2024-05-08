@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class filtering : MonoBehaviour
     List<Recipes> DessertRecipes = new List<Recipes>();
     List<Recipes> SeafoodRecipes = new List<Recipes>();
 
+    List<Recipes> resultlist = new List<Recipes>();
+
     public minires prefab;
     public GameObject parent;
 
@@ -29,7 +32,142 @@ public class filtering : MonoBehaviour
     public GameObject extra_menu;
     public ScrollRect scrl;
     public ScrollRect scrl2;
+    public GameObject[] ons;
+    public GameObject[] bigobs;
+    public void checker()
+    {
+       /* if (ons[1].activeSelf == true || ons[2].activeSelf == true)
+        {
+            ons[3].SetActive(false);
+            ons[4].SetActive(false);
+            ons[5].SetActive(false);
+            bigobs[5].SetActive(false);
+            bigobs[6].SetActive(false);
+            bigobs[7].SetActive(false);
+        }
+        else
+        {
+            bigobs[5].SetActive(true);
+            bigobs[6].SetActive(true);
+            bigobs[7].SetActive(true);
+        }
 
+        if (ons[1].activeSelf == true || ons[2].activeSelf == true)
+        {
+            ons[3].SetActive(false);
+            ons[4].SetActive(false);
+            ons[5].SetActive(false);
+            bigobs[5].SetActive(false);
+            bigobs[6].SetActive(false);
+            bigobs[7].SetActive(false);
+        }
+        else
+        {
+            bigobs[5].SetActive(true);
+            bigobs[6].SetActive(true);
+            bigobs[7].SetActive(true);
+        }*/
+    }
+    public void display_all()
+    {
+        resultlist.Clear();
+        if (ons[0].activeSelf == true)
+        {
+            for (int x = 0; x < GlutenFreeRecipes.Count; x++)
+            {
+                resultlist.Add(GlutenFreeRecipes[x]);
+            }
+        }
+        if (ons[1].activeSelf == true)
+        {
+            for (int x = 0; x < VeganRecipes.Count; x++)
+            {
+                if (resultlist.Contains(VeganRecipes[x]) == false)
+                {
+                    resultlist.Add(VeganRecipes[x]);
+                }
+            }
+        }
+        if (ons[2].activeSelf == true)
+        {
+            for (int x = 0; x < VegetarianRecipes.Count; x++)
+            {
+                if (resultlist.Contains(VegetarianRecipes[x]) == false)
+                {
+                    resultlist.Add(VegetarianRecipes[x]);
+                }
+            }
+        }
+        if (ons[3].activeSelf == true)
+        {
+            for (int x = 0; x < ChickenRecipes.Count; x++)
+            {
+                if (resultlist.Contains(ChickenRecipes[x]) == false)
+                {
+                    resultlist.Add(ChickenRecipes[x]);
+                }
+            }
+        }
+        if (ons[4].activeSelf == true)
+        {
+            for (int x = 0; x < BeefRecipes.Count; x++)
+            {
+                if (resultlist.Contains(BeefRecipes[x]) == false)
+                {
+                    resultlist.Add(BeefRecipes[x]);
+                }
+            }
+        }
+        if (ons[5].activeSelf == true)
+        {
+            for (int x = 0; x < SeafoodRecipes.Count; x++)
+            {
+                if (resultlist.Contains(SeafoodRecipes[x]) == false)
+                {
+                    resultlist.Add(SeafoodRecipes[x]);
+                }
+            }
+        }
+        if (ons[6].activeSelf == true)
+        {
+            for (int x = 0; x < DessertRecipes.Count; x++)
+            {
+                if (resultlist.Contains(DessertRecipes[x]) == false)
+                {
+                    resultlist.Add(DessertRecipes[x]);
+                }
+            }
+        }
+
+        for (int i = resultlist.Count - 1; i > 0; i--)
+        {
+            int swapIndex = Random.Range(0, i + 1);
+            Recipes temp = resultlist[i];
+            resultlist[i] = resultlist[swapIndex];
+            resultlist[swapIndex] = temp;
+        }
+       
+
+
+        for (int x = 0; x < resultlist.Count; x++)
+        {
+            minires temp = GameObject.Instantiate(prefab);
+            temp.show_Name.text = resultlist[x].r_name;
+            for (int z = 0; z < resultlist[x].ingredients.Count; z++)
+            {
+                temp.show_Ingredients.text = temp.show_Ingredients.text + resultlist[x].ingredients[z];
+                if (z < resultlist[x].ingredients.Count - 1)
+                {
+                    temp.show_Ingredients.text = temp.show_Ingredients.text + ", ";
+                }
+            }
+            temp.show_Result.sprite = resultlist[x].picture;
+            temp.transform.SetParent(parent.transform);
+            temp.filter = this;
+            scrl.verticalNormalizedPosition = 1f;
+
+        }
+    }
     public void display_Vegetarian()
     {
         for (int x = 0; x < VegetarianRecipes.Count; x++)
@@ -49,49 +187,7 @@ public class filtering : MonoBehaviour
             temp.filter = this;
             scrl.verticalNormalizedPosition = 1f;
 
-        }
-    }
-    public void display_Vegan()
-    {
-        for (int x = 0; x < VeganRecipes.Count; x++)
-        {
-            minires temp = GameObject.Instantiate(prefab);
-            temp.show_Name.text = VeganRecipes[x].r_name;
-            for (int z = 0; z < VeganRecipes[x].ingredients.Count; z++)
-            {
-                temp.show_Ingredients.text = temp.show_Ingredients.text + VeganRecipes[x].ingredients[z];
-                if (z < VeganRecipes[x].ingredients.Count - 1)
-                {
-                    temp.show_Ingredients.text = temp.show_Ingredients.text + ", ";
-                }
-            }
-            temp.show_Result.sprite = VeganRecipes[x].picture;
-            temp.transform.SetParent(parent.transform);
-            temp.filter = this;
-            scrl.verticalNormalizedPosition = 1f;
-
-        }
-    }
-    public void display_GlutenFree()
-    {
-        for (int x = 0; x < GlutenFreeRecipes.Count; x++)
-        {
-            minires temp = GameObject.Instantiate(prefab);
-            temp.show_Name.text = GlutenFreeRecipes[x].r_name;
-            for (int z = 0; z < GlutenFreeRecipes[x].ingredients.Count; z++)
-            {
-                temp.show_Ingredients.text = temp.show_Ingredients.text + GlutenFreeRecipes[x].ingredients[z];
-                if (z < GlutenFreeRecipes[x].ingredients.Count - 1)
-                {
-                    temp.show_Ingredients.text = temp.show_Ingredients.text + ", ";
-                }
-            }
-            temp.show_Result.sprite = GlutenFreeRecipes[x].picture;
-            temp.transform.SetParent(parent.transform);
-            temp.filter = this;
-            scrl.verticalNormalizedPosition = 1f;
-
-        }
+        }     
     }
     public void close_reset()
     {
