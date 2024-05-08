@@ -138,6 +138,15 @@ public class filtering : MonoBehaviour
                 }
             }
         }
+        if (ons[0].activeSelf==false&& ons[1].activeSelf == false && ons[2].activeSelf == false && ons[3].activeSelf == false &&
+            ons[4].activeSelf == false && ons[5].activeSelf == false && ons[6].activeSelf == false)
+        {
+            for (int x = 0; x < DB.DB.Count; x++)
+            {
+                resultlist.Add(DB.DB[x]);
+            }           
+        }
+
 
         for (int i = resultlist.Count - 1; i > 0; i--)
         {
