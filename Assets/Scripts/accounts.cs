@@ -88,48 +88,67 @@ public class accounts : MonoBehaviour
     }
     public void login()
     {
-        if (local.stringo[0] == "" || local.stringo[1] == "")
+
+        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+        reference.Child("ban").Child(SystemInfo.deviceUniqueIdentifier.ToString()).GetValueAsync().ContinueWithOnMainThread(task =>
         {
-            showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Email and password cannot be empty";
-            showeverything.Play();
-            local.into[0] = 0;
-        }
-        else
-        {
-            FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-            auth.SignInWithEmailAndPasswordAsync(local.stringo[0].ToString(), local.stringo[1].ToString()).ContinueWithOnMainThread(task =>
+
+            if (task.IsCompleted)
             {
-
-                if (task.IsFaulted)
+                DataSnapshot snap = task.Result;
+                if (snap.Exists == false)
                 {
-                    showeverything.Play();
-                    showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Error email or password is invalid";
-                    local.into[1] = local.into[1] + 1;
-                    if (local.into[1] >= 10)
+                    if (local.stringo[0] == "" || local.stringo[1] == "")
                     {
-                        local.into[1] = 0;
-                        banlogin.SetActive(true);
-                        DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-                        reference.Child("ban").Child(SystemInfo.deviceUniqueIdentifier.ToString()).SetValueAsync(1);
+                        showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Email and password cannot be empty";
+                        showeverything.Play();
+                        local.into[0] = 0;
                     }
+                    else
+                    {
+                        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+                        auth.SignInWithEmailAndPasswordAsync(local.stringo[0].ToString(), local.stringo[1].ToString()).ContinueWithOnMainThread(task =>
+                        {
 
-                    local.into[0] = 0;
-                    writer();
-                    return;
+                            if (task.IsFaulted)
+                            {
+                                showeverything.Play();
+                                showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Error email or password is invalid";
+                                local.into[1] = local.into[1] + 1;
+                                if (local.into[1] >= 10)
+                                {
+                                    local.into[1] = 0;
+                                    banlogin.SetActive(true);
+                                    reference = FirebaseDatabase.DefaultInstance.RootReference;
+                                    reference.Child("ban").Child(SystemInfo.deviceUniqueIdentifier.ToString()).SetValueAsync(1);
+                                }
+
+                                local.into[0] = 0;
+                                writer();
+                                return;
+                            }
+                            if (task.IsCompleted)
+                            {
+                                stani.Play();
+                                loadui.SetActive(false);
+                                local.into[1] = 0;
+                                local.into[0] = 1;
+                                local.stringo[2] = auth.CurrentUser.UserId;
+                                writer();
+                                showeverything.Play();
+                                showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Login successful...";
+                            }
+                        });
+                    }
                 }
-                if (task.IsCompleted)
+                else
                 {
-                    stani.Play();
                     loadui.SetActive(false);
-                    local.into[1] = 0;
-                    local.into[0] = 1;
-                    local.stringo[2] = auth.CurrentUser.UserId;
-                    writer();
-                    showeverything.Play();
-                    showeverything.GetComponentInChildren<TextMeshProUGUI>(true).text = "Login successful...";
+                    banlogin.SetActive(true);
                 }
-            });
-        }
+            }
+        });
+        
     }
     bool tryagain = false;
      void createacc()
