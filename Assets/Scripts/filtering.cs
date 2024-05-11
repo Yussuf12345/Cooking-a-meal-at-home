@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class filtering : MonoBehaviour
 {
+    //fdatabase reference
     public Database DB;
+    //this a list of recipies for each filter for convenience
     List<Recipes> VegetarianRecipes = new List<Recipes>();
     List<Recipes> VeganRecipes = new List<Recipes>();
     List<Recipes> GlutenFreeRecipes = new List<Recipes>();
@@ -17,12 +19,15 @@ public class filtering : MonoBehaviour
     List<Recipes> DessertRecipes = new List<Recipes>();
     List<Recipes> SeafoodRecipes = new List<Recipes>();
 
+    //list which contains the result, changes dynamically
     List<Recipes> resultlist = new List<Recipes>();
 
+    //main prefab which acts as baseline for all results
     public minires prefab;
+    //parent which will house the results objects
     public GameObject parent;
 
-
+    //this is the menu where a in a reciepe, more info is clicked so it shows that recipe all details
     public Image single_pic;
     public TextMeshProUGUI single_name;
     public TextMeshProUGUI single_ingredients;
@@ -30,12 +35,14 @@ public class filtering : MonoBehaviour
     public TextMeshProUGUI single_instructions;
     public GameObject results_menu;
     public GameObject extra_menu;
+    //scroll rects of results and single result expanded
     public ScrollRect scrl;
     public ScrollRect scrl2;
     public GameObject[] ons;
     public GameObject[] bigobs;
     public void checker()
     {
+        //empty function that can be used later as utlity
        /* if (ons[1].activeSelf == true || ons[2].activeSelf == true)
         {
             ons[3].SetActive(false);
@@ -70,6 +77,8 @@ public class filtering : MonoBehaviour
     }
     public void display_all()
     {
+        //this is a function which disply the results after filtering, it checks each filter one by one and adds the Recipe to result list
+        //if the filter is on
         resultlist.Clear();
         if (ons[0].activeSelf == true)
         {
@@ -138,6 +147,7 @@ public class filtering : MonoBehaviour
                 }
             }
         }
+        //here if no filter is choosen it justs shows all Recipes
         if (ons[0].activeSelf==false&& ons[1].activeSelf == false && ons[2].activeSelf == false && ons[3].activeSelf == false &&
             ons[4].activeSelf == false && ons[5].activeSelf == false && ons[6].activeSelf == false)
         {
@@ -147,7 +157,7 @@ public class filtering : MonoBehaviour
             }           
         }
 
-
+        //this reorders the list randomly so that the results aren't monotonic
         for (int i = resultlist.Count - 1; i > 0; i--)
         {
             int swapIndex = Random.Range(0, i + 1);
@@ -157,7 +167,7 @@ public class filtering : MonoBehaviour
         }
        
 
-
+        //fill the results UI with result list recipe details 
         for (int x = 0; x < resultlist.Count; x++)
         {
             minires temp = GameObject.Instantiate(prefab);
@@ -177,27 +187,7 @@ public class filtering : MonoBehaviour
 
         }
     }
-    public void display_Vegetarian()
-    {
-        for (int x = 0; x < VegetarianRecipes.Count; x++)
-        {
-            minires temp = GameObject.Instantiate(prefab);
-            temp.show_Name.text = VegetarianRecipes[x].r_name;
-            for (int z = 0; z < VegetarianRecipes[x].ingredients.Count; z++)
-            {
-                temp.show_Ingredients.text = temp.show_Ingredients.text + VegetarianRecipes[x].ingredients[z];
-                if (z < VegetarianRecipes[x].ingredients.Count - 1)
-                {
-                    temp.show_Ingredients.text = temp.show_Ingredients.text + ", ";
-                }
-            }
-            temp.show_Result.sprite = VegetarianRecipes[x].picture;
-            temp.transform.SetParent(parent.transform);
-            temp.filter = this;
-            scrl.verticalNormalizedPosition = 1f;
-
-        }     
-    }
+    //this is a function which delete results once the user goes back to filter menu
     public void close_reset()
     {
         foreach (Transform child in parent.transform)
@@ -205,9 +195,11 @@ public class filtering : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+    //this function is responsible for display the choosen reciepe expanded
     public void extra(string s_name)
     {
         int temp = 0;
+        //determine which receipe we want to get more details of
         for (int x = 0; x < DB.DB.Count; x++)
         {
             if (DB.DB[x].r_name == s_name)
@@ -216,9 +208,11 @@ public class filtering : MonoBehaviour
                 break;
             }
         }
+        //display its details
         single_name.text = s_name;
         single_pic.sprite = DB.DB[temp].picture;
         single_ingredients.text = "Ingredients: ";
+        //here it loops on ingredients and lists them comma-seprated
         for (int z = 0; z < DB.DB[temp].ingredients.Count; z++)
         {
             single_ingredients.text = single_ingredients.text + DB.DB[temp].ingredients[z];
@@ -228,7 +222,7 @@ public class filtering : MonoBehaviour
             }
         }
 
-
+        //here it loops on categories and lists them comma-seprated
         single_category.text = "Categories: ";
         for (int z = 0; z < DB.DB[temp].categories.Count; z++)
         {
@@ -239,7 +233,7 @@ public class filtering : MonoBehaviour
             }
         }
 
-
+        //here it lists insutrctions where each instruction is displayed in a signle line
         single_instructions.text = "Instructions: <br>";
         for (int z = 0; z < DB.DB[temp].instructions.Count; z++)
         {
@@ -253,7 +247,7 @@ public class filtering : MonoBehaviour
         results_menu.SetActive(false);
         extra_menu.SetActive(true);
 
-
+        //adjust the 3 text elements so they are placed below each other regardless of their length
         Vector2 txt_size = GetTextSize(single_ingredients);
         single_ingredients.rectTransform.sizeDelta = new Vector3(single_ingredients.rectTransform.sizeDelta.x, txt_size.y);
 
@@ -263,16 +257,17 @@ public class filtering : MonoBehaviour
 
         txt_size = GetTextSize(single_instructions);
         single_instructions.rectTransform.sizeDelta = new Vector3(single_instructions.rectTransform.sizeDelta.x, txt_size.y);
-
+        //scroll back to the top of the result Recipe
         scrl2.verticalNormalizedPosition = 1f;
     }
+    //get the text object width and height
     Vector2 GetTextSize(TextMeshProUGUI text)
     {
         float width = text.preferredWidth;
         float height = text.preferredHeight;
         return new Vector2(width, height);
     }
-    // Start is called before the first frame update
+    //these are function that fill the values of the lists used for convenience
     void Start()
     {
         isVegetarian();

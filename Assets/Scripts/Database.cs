@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Database : MonoBehaviour
 {
-    public List<Recipes> DB = new List<Recipes>();
-    public Sprite[] pic;
+    public List<Recipes> DB = new List<Recipes>();//this is a list of all the recipes in the database
+    public Sprite[] pic;//this is a reference to pictures of all recipes
     void Awake()
     {
+        //here we create all recipes dynamically using scriptable object recipes
         Recipes rp = ScriptableObject.CreateInstance<Recipes>();
 
         List<string> Ingredients = new List<string>
